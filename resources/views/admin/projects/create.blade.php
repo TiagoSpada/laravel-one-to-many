@@ -25,6 +25,16 @@
                 <textarea class="form-control" placeholder="Descrizione" id="descrizione" name="description" style="height: 150px"></textarea>
                 <label for="descrizione">Descrizione</label>
             </div>
+
+            <div class="form-floating mb-3">
+                <select class="form-select " id="type-id" aria-label="Floating label select example" name="type_id">
+                    <option selected></option>
+                    @foreach ($types as $type)
+                        <option value="{{ $type->id }}">{{ $type->title }}</option>
+                    @endforeach
+                </select>
+                <label for="type-id">Selezione la tipologia</label>
+            </div>
             <button class="btn btn-primary"><i class="fa-solid fa-pencil"></i>Crea nuovo progetto</button>
         </form>
     </div>
